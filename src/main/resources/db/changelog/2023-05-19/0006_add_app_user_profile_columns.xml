@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.4.xsd">
+
+    <changeSet id="0006-1" author="Dreilt">
+        <addColumn tableName="app_user">
+            <column name="date_of_birth" type="DATE"/>
+        </addColumn>
+        <modifySql>
+            <append value=" AFTER last_name"/>
+        </modifySql>
+    </changeSet>
+
+    <changeSet id="0006-2" author="Dreilt">
+        <addColumn tableName="app_user">
+            <column name="city" type="VARCHAR(50)"/>
+        </addColumn>
+        <modifySql>
+            <append value=" AFTER date_of_birth"/>
+        </modifySql>
+    </changeSet>
+
+    <changeSet id="0006-3" author="Dreilt">
+        <addColumn tableName="app_user">
+            <column name="bio" type="VARCHAR(1000)"/>
+        </addColumn>
+        <modifySql>
+            <append value=" AFTER city"/>
+        </modifySql>
+    </changeSet>
+</databaseChangeLog>
